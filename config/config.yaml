@@ -1,0 +1,94 @@
+simulation:
+  n_users: 10000
+  n_days: 365
+  seed: 42
+
+  archetypes:
+    Power User:
+      share: 0.15
+      daily_txn_rate: 2.5
+      avg_value: 1800
+      churn_prob: 0.03
+      p2m_ratio: 0.65
+    Regular:
+      share: 0.25
+      daily_txn_rate: 0.80
+      avg_value: 800
+      churn_prob: 0.15
+      p2m_ratio: 0.50
+    Occasional:
+      share: 0.30
+      daily_txn_rate: 0.18
+      avg_value: 450
+      churn_prob: 0.45
+      p2m_ratio: 0.38
+    Dormant:
+      share: 0.30
+      daily_txn_rate: 0.04
+      avg_value: 220
+      churn_prob: 0.78
+      p2m_ratio: 0.28
+
+  city_tier_dist: [0.30, 0.35, 0.35]
+  age_groups: ["18-25", "26-35", "36-50", "50+"]
+  age_dist: [0.30, 0.35, 0.25, 0.10]
+
+  categories:
+    - Groceries
+    - "Food & Dining"
+    - Utilities
+    - Shopping
+    - Entertainment
+    - Transport
+    - Healthcare
+    - "P2P Transfer"
+
+features:
+  early_window_days: 14
+  numeric:
+    - txn_d7
+    - value_d7
+    - txn_d14
+    - value_d14
+    - first_p2m_day
+    - cat_diversity
+    - p2m_ratio
+    - city_tier
+  binary:
+    - has_first_p2m_d14
+  target: churned
+
+model:
+  churn:
+    test_size: 0.20
+    cv_folds: 5
+    lgbm:
+      n_estimators: 500
+      learning_rate: 0.05
+      num_leaves: 31
+      min_child_samples: 20
+      subsample: 0.80
+      colsample_bytree: 0.80
+      early_stopping_rounds: 40
+    logistic:
+      C: 1.0
+      max_iter: 1000
+
+  uplift:
+    treatment_fraction: 0.40
+    classification_threshold: 0.60
+    n_estimators: 200
+
+intervention:
+  default_cashback: 20
+  default_budget: 30000
+  response_rates:
+    Occasional: 0.25
+    Regular: 0.12
+    Dormant: 0.05
+    Power User: 0.08
+
+logging:
+  level: INFO
+  format: "%(asctime)s | %(name)s | %(levelname)s | %(message)s"
+  datefmt: "%Y-%m-%d %H:%M:%S"
