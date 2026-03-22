@@ -137,7 +137,4 @@ class TestExperimentDesign:
         assert len(result.recommendations) >= 3
 
     def test_summary_string(self, mock_users, mock_uplift):
-        result = design_experiment(mock_users, mock_uplift)
-        summary = result.summary()
-        assert "POWER ANALYSIS" in summary
-        assert "Sample size per arm" in summary
+        result = design_experiment(mock_users, 

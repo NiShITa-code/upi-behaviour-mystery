@@ -137,6 +137,4 @@ class TestFairnessAudit:
         attr1 = list(r1.attributes.values())[0]
         attr2 = list(r2.attributes.values())[0]
         g1_rates = [g.churn_rate_predicted for g in attr1.groups.values()]
-        g2_rates = [g.churn_rate_predicted for g in attr2.groups.values()]
-        # Lower threshold → more users flagged as churning
-        assert sum(g1_rates) > sum(g2_rates)
+        g2_rates = [g.churn_rate_predicted

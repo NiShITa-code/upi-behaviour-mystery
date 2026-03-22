@@ -168,9 +168,4 @@ def _age_group_breakdown(sim: SimulationResult) -> pd.DataFrame:
         sim.users.groupby("age_group")
         .agg(
             n_users=("user_id", "count"),
-            churn_rate=("churned", "mean"),
-            avg_txn_d14=("txn_d14", "mean"),
-            avg_p2m_ratio=("p2m_ratio", "mean"),
-        )
-        .reset_index()
-    )
+       

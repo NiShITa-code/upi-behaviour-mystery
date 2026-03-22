@@ -294,16 +294,4 @@ def design_experiment(
         "Network effects: if cashback users recruit friends, SUTVA may be violated",
         "Novelty effect: short-term lift that fades as users habituate to cashback",
         "Self-selection: users who opt-in to cashback offers differ from random population",
-        "Seasonality: festival periods (Diwali, Holi) can inflate baseline retention",
-    ]
-
-    design = ExperimentDesign(
-        primary=primary,
-        subgroup_analyses=subgroups,
-        bonferroni_alpha=bonf_alpha,
-        guardrail_metrics=guardrails,
-        recommendations=recs,
-        risks=risks,
-    )
-    logger.info(design.summary())
-    return design
+        "Seasonality: festival periods (Diwali, Holi) can inflate baseline 

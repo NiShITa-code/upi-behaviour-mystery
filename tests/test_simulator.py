@@ -144,7 +144,4 @@ class TestChurnAdjustment:
     def test_output_always_in_range(self):
         for base in [0.01, 0.5, 0.99]:
             for txns in [0, 1, 5, 10, 25, 50]:
-                p = _adjust_churn_prob(base, txns)
-                assert 0.01 <= p <= 0.99, (
-                    f"Out of range: base={base}, txns={txns} → {p}"
-                )
+                p = _adjust_churn_pro

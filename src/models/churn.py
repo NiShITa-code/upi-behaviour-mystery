@@ -346,17 +346,4 @@ def _compute_metrics(
         raw = clf.feature_importances_
         importance = {
             feat: round(float(imp / raw.sum() * 100), 1)
-            for feat, imp in zip(EXTENDED_FEATURES, raw)
-        }
-
-    return EvaluationMetrics(
-        auc_roc=round(auc_roc, 4),
-        avg_precision=round(avg_prec, 4),
-        brier_score=round(brier, 4),
-        classification_report=report,
-        fpr=fpr,
-        tpr=tpr,
-        precision=prec,
-        recall=rec,
-        feature_importance=importance or {},
-    )
+            for feat, imp in zi

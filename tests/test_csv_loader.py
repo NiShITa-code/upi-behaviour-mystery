@@ -114,8 +114,4 @@ class TestLoadStrategyModule:
         uplift = run_uplift_model(churn, cashback_amount=20, total_budget=10000)
 
         strategy = generate_strategy(churn, uplift, coh, 20, 10000)
-        text = strategy.to_plain_text()
-
-        assert "RECOMMENDATIONS" in text
-        assert "RISK FACTORS" in text
-        assert len(text) > 500
+        text = strategy.to_plain_te

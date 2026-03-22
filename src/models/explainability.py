@@ -156,9 +156,4 @@ def compute_shap_explanations(
         feature_names=feature_names,
         X_display=X_sample,
         expected_value=float(expected_value),
-        elapsed_seconds=elapsed,
-        global_importance=global_importance,
-        top_features=top_features,
-    )
-    logger.info(result.summary())
-    return result
+        elaps

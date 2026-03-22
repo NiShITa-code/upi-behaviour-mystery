@@ -146,8 +146,4 @@ SELECT
     ROUND(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER (), 1)
                                             AS pct_of_total,
     ROUND(AVG(uplift), 4)                   AS avg_uplift,
-    ROUND(AVG(p0), 4)                       AS avg_p0,
-    ROUND(AVG(p1), 4)                       AS avg_p1
-FROM `project.dataset.users_segmented`
-GROUP BY segment
-ORDER BY avg_uplift DESC;
+    ROUND(AVG(p0), 4)                      

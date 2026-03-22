@@ -193,10 +193,4 @@ def _adjust_churn_prob(base: float, txn_d14: int) -> float:
     if txn_d14 == 0:
         multiplier = 1.8   # much more likely to churn if no early engagement
     elif txn_d14 < 3:
-        multiplier = 1.3
-    elif txn_d14 > 20:
-        multiplier = 0.5   # very engaged early → less likely to churn
-    else:
-        multiplier = 1.0
-
-    return float(np.clip(base * multiplier, 0.01, 0.99))
+        multiplier 

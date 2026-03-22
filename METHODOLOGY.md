@@ -82,5 +82,4 @@ For each continuous feature (`txn_d14`, `value_d14`, `p2m_ratio`):
    response boost. Real intervention effects depend on timing, channel, amount,
    and user state.
 
-These limitations are documented as future work, not hidden. In a production
-deployment, each would be addressed with real behavioural data.
+These limitations are documented as future work, not hidd

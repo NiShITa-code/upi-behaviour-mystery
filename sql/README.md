@@ -16,4 +16,4 @@ the interfaces are identical.
 | 4 | City tier analysis | `cohorts._city_tier_breakdown()` | Geographic behaviour differences |
 | 5 | Age group analysis | `cohorts._age_group_breakdown()` | Demographic segmentation |
 | 6 | Feature table | `features/engineer.py` | Model training input with derived features |
-| 7 | Uplift segments | `models/uplift.py` | ROI summary by treatment segment |
+| 7 | Uplift segments | `models/uplift.py` | ROI summary by tr

@@ -282,12 +282,4 @@ def run_fairness_audit(
     summary_text = "\n".join(lines)
     logger.info(summary_text)
 
-    return FairnessAudit(
-        attributes=audit_results,
-        overall_churn_rate=float(users_scored["churned"].mean()),
-        overall_auc=float(overall_auc),
-        threshold=threshold,
-        total_flags=total_flags,
-        passed=passed,
-        summary_text=summary_text,
-    )
+    retu

@@ -117,6 +117,3 @@ def build_feature_pipeline() -> Pipeline:
     """
     return Pipeline([
         ("early_window",    EarlyWindowFeatures()),
-        ("feature_select",  FeatureSelector(EXTENDED_FEATURES)),
-        ("scaler",          StandardScaler()),
-    ])

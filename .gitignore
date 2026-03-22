@@ -38,3 +38,6 @@ pytest-cache-files-*/
 # Coverage
 htmlcov/
 .coverage
+
+# Setup scripts (not part of the project)
+setup_git.sh
