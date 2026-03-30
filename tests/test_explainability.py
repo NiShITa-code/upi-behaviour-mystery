@@ -73,4 +73,5 @@ class TestSHAPExplanation:
     def test_summary_string(self, mock_shap):
         summary = mock_shap.summary()
         assert "SHAP EXPLANATION" in summary
- 
+        assert "Users explained" in summary
+        assert "100" in summary

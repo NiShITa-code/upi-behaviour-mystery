@@ -45,4 +45,6 @@ def get_logger(name: str, log_file: Optional[Path] = None) -> logging.Logger:
         log_file.parent.mkdir(parents=True, exist_ok=True)
         fh = logging.FileHandler(log_file)
         fh.setFormatter(fmt)
-  
+        logger.addHandler(fh)
+
+    return logger

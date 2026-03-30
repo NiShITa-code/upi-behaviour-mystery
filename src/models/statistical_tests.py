@@ -193,4 +193,11 @@ def delong_test(
         auc_2=round(auc_2, 4),
         auc_diff=round(auc_diff, 4),
         z_statistic=round(z, 4),
-        p_
+        p_value=round(p_value, 6),
+        ci_lower=round(ci_lower, 4),
+        ci_upper=round(ci_upper, 4),
+        significant=p_value < alpha,
+    )
+
+    logger.info(result.summary())
+    return result

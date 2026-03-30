@@ -162,4 +162,13 @@ def cli(n_users, seed, cashback, budget, no_save):
     """
     result = run_pipeline(
         n_users=n_users,
-        seed=
+        seed=seed,
+        cashback=cashback,
+        budget=budget,
+        save_artifacts=not no_save,
+    )
+    result.print_summary()
+
+
+if __name__ == "__main__":
+    cli()

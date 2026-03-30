@@ -126,4 +126,6 @@ def validate_user_dataframe(df: pd.DataFrame) -> None:
     if df["user_id"].duplicated().any():
         raise ValueError("Duplicate user_ids found")
 
-    if df.isnull().any().any
+    if df.isnull().any().any():
+        null_cols = df.columns[df.isnull().any()].tolist()
+        raise ValueError(f"Null values in columns: {null_cols}")

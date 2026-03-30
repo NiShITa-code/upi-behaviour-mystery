@@ -140,4 +140,8 @@ class TestSegmentClassification:
 
     def test_lost_cause(self):
         row = self._make_row(p0=0.2, p1=0.3)
-        assert _classify_segment(row) == "Lost 
+        assert _classify_segment(row) == "Lost Cause"
+
+    def test_sleeping_dog(self):
+        row = self._make_row(p0=0.9, p1=0.2)
+        assert _classify_segment(row) == "Sleeping Dog"

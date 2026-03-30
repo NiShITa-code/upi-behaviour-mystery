@@ -276,4 +276,13 @@ def generate_strategy(
         f"actually changes behaviour. Spend budget only on them."
     )
 
-    report = StrategyRep
+    report = StrategyReport(
+        headline=headline,
+        summary=summary,
+        recommendations=recommendations,
+        risk_factors=risk_factors,
+        key_metrics=key_metrics,
+    )
+
+    logger.info("Strategy report generated: %d recommendations", len(recommendations))
+    return report

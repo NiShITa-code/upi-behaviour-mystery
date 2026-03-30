@@ -54,4 +54,5 @@ class TestDeLongTest:
         y_pred_1 = rng.uniform(0, 1, size=200)
         y_pred_2 = rng.uniform(0, 1, size=200)
         result = delong_test(y_true, y_pred_1, y_pred_2)
-        assert len(result.summ
+        assert len(result.summary()) > 50
+        assert "DeLong" in result.summary()

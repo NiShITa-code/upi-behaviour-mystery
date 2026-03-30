@@ -298,4 +298,11 @@ def generate_sample_csv(n_users: int = 20, seed: int = 42) -> pd.DataFrame:
             "value_d7": value_d7,
             "txn_d14": txn_d14,
             "value_d14": value_d14,
-   
+            "has_first_p2m_d14": int(first_p2m < 14),
+            "first_p2m_day": first_p2m,
+            "cat_diversity": int(rng.integers(1, 8)),
+            "p2m_ratio": round(float(rng.uniform(0.2, 0.8)), 2),
+            "churned": int(rng.random() > 0.6),
+        })
+
+    return pd.DataFrame(rows)

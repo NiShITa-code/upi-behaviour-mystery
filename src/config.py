@@ -167,4 +167,11 @@ def load_config(path: Path = CONFIG_PATH) -> Config:
     return Config(
         simulation=simulation,
         features=features,
-    
+        model=model,
+        intervention=intervention,
+        logging=logging_cfg,
+    )
+
+
+# Module-level singleton — import this everywhere
+CFG: Config = load_config()

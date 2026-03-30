@@ -277,4 +277,11 @@ def _compute_roi(
 
     return ROIScenario(
         budget=budget,
-        cashback_per_offer=c
+        cashback_per_offer=cashback,
+        n_offers=n_offers,
+        n_random_offers_to_persuadables=n_random_to_p,
+        users_retained_random=retained_random,
+        n_targeted_offers=n_targeted,
+        users_retained_targeted=retained_targeted,
+        efficiency_gain=round(efficiency, 1),
+    )
