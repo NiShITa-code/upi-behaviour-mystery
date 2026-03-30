@@ -14,6 +14,17 @@
 
 ---
 
+<p align="center">
+  <em>Applies retention & causal inference methods used at</em><br/>
+  <img src="https://img.shields.io/badge/Google-4285F4?style=flat&logo=google&logoColor=white" alt="Google">
+  <img src="https://img.shields.io/badge/PhonePe-5F259F?style=flat&logo=phonepe&logoColor=white" alt="PhonePe">
+  <img src="https://img.shields.io/badge/Uber-000000?style=flat&logo=uber&logoColor=white" alt="Uber">
+  <img src="https://img.shields.io/badge/Flipkart-F7D000?style=flat&logoColor=black" alt="Flipkart">
+  <img src="https://img.shields.io/badge/Razorpay-0C2451?style=flat&logoColor=white" alt="Razorpay">
+</p>
+
+---
+
 An open-source retention analytics toolkit for India's UPI payment ecosystem. Upload your data (or use NPCI-calibrated simulation), run churn prediction + causal uplift modelling, and get plain-English strategy recommendations — all through an interactive dashboard.
 
 **491 million registered UPI users. Most barely transact.** This tool helps you figure out why, identify who will respond to interventions, and generate actionable recommendations.
